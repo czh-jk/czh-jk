@@ -1,0 +1,131 @@
+<html>
+<head>
+	<meta charset="utf-8">
+<script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/jquery-ui"></script>
+<link href="http://www.francescomalagrino.com/BootstrapPageGenerator/3/css/bootstrap-combined.min.css" rel="stylesheet" media="screen">
+<script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/bootstrap.min.js"></script>
+</head>
+<body>
+<center>
+<div class="container-fluid" id="XS">
+	<div class="row-fluid">
+		<div class="span12">
+			<ul class="nav nav-tabs">
+				<li class="active">
+					<a href="#">首页</a>
+				</li>
+				<li>
+					<a href="#">资料</a>
+				</li>
+				<li class="disabled">
+					<a href="#">信息</a>
+				</li>
+				<li class="dropdown pull-right">
+					 <a href="#" data-toggle="dropdown" class="dropdown-toggle">操作<strong class="caret"></strong></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#">设置栏目</a>
+						</li>
+						<li>
+							<a href="#">更多设置</a>
+						</li>
+
+						<li class="divider">
+						</li>
+						<li>
+							<a href="#">分割线</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<style>
+
+	input{
+
+		border-radius:10px;
+
+	}
+	.btn {
+		background: #3498db;
+		background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+		background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+		background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+		background-image: -o-linear-gradient(top, #3498db, #2980b9);
+		background-image: linear-gradient(to bottom, #3498db, #2980b9);
+		-webkit-border-radius: 28px;
+		-moz-border-radius: 28px;
+		border-radius: 28px;
+		text-shadow: 5px -3px 2px #666666;
+		font-family: Georgia;
+		color: white;
+		font-size: 13px;
+		padding: 10px 20px 10px 20px;
+		text-decoration: none;
+	}
+
+	.btn:hover {
+		background: #8fce00;
+		background-image: -webkit-linear-gradient(top, #8fce00, #8fce00);
+		background-image: -moz-linear-gradient(top, #8fce00, #8fce00);
+		background-image: -ms-linear-gradient(top, #8fce00, #8fce00);
+		background-image: -o-linear-gradient(top, #8fce00, #8fce00);
+		background-image: linear-gradient(to bottom, #8fce00, #8fce00);
+		text-decoration: none;
+	}
+
+</style>
+
+<script>
+
+	function getval(){
+		var ers = document.getElementById("carID").value;
+		var ul="http://1.71.189.29:8082/photo/"+ers+".jpg";
+
+
+		if (ers.length!=18){
+			alert("请输入18位身份证号码");
+		}else {
+
+			document.getElementById("image").src=ul;
+
+		}
+
+
+
+	}
+	function imgError(image){
+		image.setAttribute("src","https://img1.baidu.com/it/u=3672833322,402996303&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500");
+		alert("请输入正确的身份证号!!");
+
+	}
+
+</script>
+
+<h1>在线身份验证系统</h1>
+<img id="image" src="https://img2.baidu.com/it/u=545230950,
+1027590554&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500"
+	 onerror="imgError(this)" onload="loadImage(this)" style="text-align:center" width="200"/>
+
+
+<ul >
+
+
+
+	请输入身份证号:<input id="carID" type="text" value=""><br>
+	<br><br>	<br>	<br>	<br>
+	<button class="btn" type="button" onclick="getval()">点击开始身份验证</button>
+
+
+
+
+
+</ul>
+</center>
+</body>
+</html>
